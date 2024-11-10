@@ -23,6 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('VAR_SECRET_KEY')
 
+if not SECRET_KEY:
+	raise ValueError("Check if VAR_SECRET_KEY exists.")
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
