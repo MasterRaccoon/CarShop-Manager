@@ -82,11 +82,11 @@ WSGI_APPLICATION = 'app.wsgi.application'
 DATABASES = {
 	'default': {
 		'ENGINE': 'django.db.backends.postgresql',
-		'NAME': os.environ.get('DB_NAME'),
-		'USER': os.environ.get('DB_USER'),
-		'PASSWORD': os.environ.get('DB_PASSWORD'),
-		'HOST': os.environ.get('DB_HOST'),
-		'PORT': os.environ.get('DB_PORT'),
+		'NAME': os.environ.get('AIVEN_DB_NAME'),
+		'USER': os.environ.get('AIVEN_DB_USER'),
+		'PASSWORD': os.environ.get('AIVEN_DB_PASSWORD'),
+		'HOST': os.environ.get('AIVEN_DB_HOST'),
+		'PORT': os.environ.get('AIVEN_DB_PORT'),
 	}
 }
 
