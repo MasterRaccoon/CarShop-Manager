@@ -32,20 +32,15 @@
 			object-fit: cover;
 		}
 
-		.divider {
-			margin: 1px;
-			width: 100%;
-		}
-
-		.car-card h3 {
-			font-size: 20px;
-			margin-top: 10px;
-			margin-bottom: 5px;
-		}
-
 		.car-card h2 {
 			font-size: 1.5rem;
 			margin: 10px;
+			display: block;
+		}
+
+		.car-card h2 span {
+			display: block; /* Modelo em uma nova linha */
+			font-size: inherit; /* Mesmo tamanho que o nome da marca */
 		}
 
 		.car-card p {
@@ -56,6 +51,12 @@
 		@media (max-width: 768px) {
 			.car-grid {
 				grid-template-columns: repeat(2, 1fr);
+			}
+
+			/* Limitar a altura da imagem para dispositivos móveis */
+			.car-card img {
+				height: 120px;
+				object-fit: cover;
 			}
 		}
 
@@ -125,6 +126,7 @@
 	</form>
 
 	{% load static %}
+	{% load custom_filters %}
 
 	<div class="car-grid">
 		{% if cars %}
@@ -137,7 +139,7 @@
 							<img src="{% static 'images/default_car_img.png' %}" alt="Imagem padrão" class="default-image">
 						{% endif %}
 						<hr>
-						<h2>{{ car.brand }} {{ car.model }}</h2>
+						<h2>{{ car.brand }}<span>{{ car.model|split_first }}</span></h2>
 						<p>{{ car.model_year }} - R$ {{ car.value }}</p>
 					</div>
 				</a>
