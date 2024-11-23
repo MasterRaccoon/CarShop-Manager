@@ -1,6 +1,6 @@
 # CarShop-Manager  
 
-The **CarShop-Manager** is a prototype built with Django for managing car dealerships. This project showcases vehicle management features, automatic description generation, and professional hosting for demonstration purposes.  
+The **CarShop-Manager** is a prototype built with Django for managing car dealerships. This project showcases vehicle management features, automatic description generation using AI, and professional hosting for demonstration purposes.  
 
 ## Features  
 
@@ -41,10 +41,13 @@ The prototype is divided into the following key components:
    - **uWSGi** for serving the Python application.  
    - **Systemd** for process management.  
 
+4. **AI Services**:  
+   - Integration with Google AI APIs for automatic vehicle description generation.  
+
 ## Requirements  
 
 - Python 3.10+  
-- Django 4.x  
+- Django 5.x  
 - PostgreSQL 14+  
 - Configured virtual environment  
 
@@ -54,3 +57,4 @@ The prototype is divided into the following key components:
    ```bash
    git clone https://github.com/your-username/carshop-manager.git
    cd carshop-manager
+
